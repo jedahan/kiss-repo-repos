@@ -1,0 +1,3 @@
+#!/bin/sh
+
+printf 'To start using the community repo, `%s`\n' 'sh -l'
