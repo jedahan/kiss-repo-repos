@@ -2,6 +2,8 @@
 
 packages that install [kiss](k1ss.org) repositories for you
 
+installs to $KISS_REPOSITORY_PATH, which defaults to **/var/db/kiss/repos**
+
 repo-admicos: admicos's personal repository
 
 repo-cemkeylan: cemkeylan's personal repository
