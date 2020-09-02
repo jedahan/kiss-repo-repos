@@ -1,0 +1,3 @@
+#!/bin/sh
+
+printf 'To start using himmalerin custom repo, `%s`\n' 'exec sh -l'
