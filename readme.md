@@ -12,6 +12,8 @@ repo-community: the community repository
 
 repo-eudaldgr: libs from eudaldgr's repo
 
+repo-eudaldgr-lang: lang from eudaldgr's repo
+
 repo-eudaldgr-testing: testing packages from eudaldgr's repo
 
 repo-fonts: a repository for font packages
