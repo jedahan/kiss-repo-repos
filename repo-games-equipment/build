@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
+repo="$repos/games"
+
+mkdir -p "$1/etc/profile.d"
+printf "export KISS_PATH=%s/%s:\$KISS_PATH\n" "$repo" "equipment" > "$1/etc/profile.d/kiss_repo-games-equipment.sh"
