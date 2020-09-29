@@ -1,3 +1,0 @@
-#!/bin/sh
-
-printf 'To start using eudaldgr lang repo, `%s`\n' 'exec sh -l'
