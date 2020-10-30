@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
+repo="$repos/eudaldgr"
+
+mkdir -p "$1/etc/profile.d"
+printf "export KISS_PATH=%s/%s:\$KISS_PATH\n" "$repo" "python" > "$1/etc/profile.d/kiss_repo-eudaldgr-python.sh"

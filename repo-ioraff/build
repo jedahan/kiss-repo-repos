@@ -1,0 +1,13 @@
+#!/bin/sh -e
+
+reponame="ioraff"
+subdir="extra"
+uri="https://github.com/ioraff/kiss-personal"
+
+repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
+repo="$repos/$reponame"
+mkdir -p "$1/$repos"
+git clone --recursive "$uri" "$1/$repo"
+
+mkdir -p "$1/etc/profile.d"
+printf "export KISS_PATH=%s/%s:\$KISS_PATH\n" "$repo" "$subdir" > "$1/etc/profile.d/kiss_repo-$reponame.sh"

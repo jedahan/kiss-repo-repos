@@ -1,0 +1,3 @@
+#!/bin/sh
+
+printf 'To start using eudaldgr python repo, `%s`\n' 'exec sh -l'
