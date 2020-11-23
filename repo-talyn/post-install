@@ -1,0 +1,3 @@
+#!/bin/sh
+
+printf 'To start using the talyn repo, `%s`\n' 'exec sh -l'
