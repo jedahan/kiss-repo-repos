@@ -1,3 +1,3 @@
 #!/bin/sh
 
-printf 'To start using languages repo, `%s`\n' 'exec sh -l'
+printf 'To start using the lang repo, `%s`\n' 'source /etc/profile'
