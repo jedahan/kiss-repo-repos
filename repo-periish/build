@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
+repo="$repos/periish"
+uri="https://github.com/periish/kiss-all"
+mkdir -p "$1/$repos"
+git clone --recursive "$uri" "$1/$repo"
