@@ -3,5 +3,5 @@
 repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
 repo="$repos/eudaldgr"
 
-mkdir -p "$1/etc/profile.d"
-printf "export KISS_PATH=%s/%s:\$KISS_PATH\n" "$repo" "extra" > "$1/etc/profile.d/kiss_repo-eudaldgr-extra.sh"
+profiles="$1"/etc/profile.d && mkdir -p "$profiles"
+echo "export KISS_PATH=$repo/extra:\$KISS_PATH" > "$profiles"/kiss_repo-eudaldgr-extra.sh

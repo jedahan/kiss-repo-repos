@@ -1,10 +1,12 @@
 #!/bin/sh -e
 
-repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
-repo="$repos/repos"
 uri="https://github.com/jedahan/kiss-repo-repos"
+name="repos"
 
-git clone "$uri" "$1/$repo"
+repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
+repo="$repos/$name"
 
-mkdir -p "$1/etc/profile.d"
-printf "export KISS_PATH=\$KISS_PATH:%s\n" "$repo" > "$1/etc/profile.d/kiss_repo-repos.sh"
+git clone --recursive "$uri" "$1/$repo"
+
+profiles="$1"/etc/profile.d && mkdir -p "$profiles"
+echo "export KISS_PATH=$repo:\$KISS_PATH" > "$profiles"/kiss_repo-$name.sh

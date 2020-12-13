@@ -3,8 +3,8 @@
 repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
 repo="$repos/containers"
 uri="https://github.com/jedahan/kiss-containers"
-
 git clone --recursive "$uri" "$1/$repo"
 
-mkdir -p "$1/etc/profile.d"
-printf "export KISS_PATH=%s:\$KISS_PATH\n" "$repo" > "$1/etc/profile.d/kiss_repo-containers.sh"
+profiles="$1"/etc/profile.d
+mkdir -p "$profiles"
+echo "export KISS_PATH=$repo:\$KISS_PATH" > "$profiles"/kiss_repo-containers.sh

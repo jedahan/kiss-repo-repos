@@ -1,10 +1,12 @@
 #!/bin/sh -e
 
-repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
-repo="$repos/admicos"
 uri="https://git.ebc.li/kiss/custom"
+name="admicos"; path="custom"
+
+repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
+repo="$repos/$name"
 
 git clone --recursive "$uri" "$1/$repo"
 
-mkdir -p "$1/etc/profile.d"
-printf "export KISS_PATH=%s/%s:\$KISS_PATH\n" "$repo" "custom" > "$1/etc/profile.d/kiss_repo-admicos.sh"
+profiles="$1"/etc/profile.d && mkdir -p "$profiles"
+echo "export KISS_PATH=$repo/$path:\$KISS_PATH" > "$profiles"/kiss_repo-$name-$path.sh

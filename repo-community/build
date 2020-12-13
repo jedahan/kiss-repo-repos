@@ -3,8 +3,8 @@
 repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
 repo="$repos/community"
 uri="https://github.com/kisslinux/community.git"
+profiles="$1"/etc/profile.d
 
 git clone --recursive "$uri" "$1/$repo"
-
-mkdir -p "$1/etc/profile.d"
-printf "export KISS_PATH=%s/community:\$KISS_PATH\n" "$repo" > "$1/etc/profile.d/kiss_repo-community.sh"
+mkdir -p "$profiles"
+echo "export KISS_PATH=$repo/community:\$KISS_PATH" > "$profiles"/kiss_repo-community.sh

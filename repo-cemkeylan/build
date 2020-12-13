@@ -3,8 +3,8 @@
 repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
 repo="$repos/cemkeylan"
 uri="https://github.com/cemkeylan/kiss-repository.git"
+profiles="$1"/etc/profile.d
 
 git clone --recursive "$uri" "$1/$repo"
-
-mkdir -p "$1/etc/profile.d"
-printf "export KISS_PATH=%s/personal:\$KISS_PATH\n" "$repo" > "$1/etc/profile.d/kiss_repo-cemkeylan.sh"
+mkdir -p "$profiles"
+echo "export KISS_PATH=$repo/personal:\$KISS_PATH" > "$profiles"/kiss_repo-cemkeylan.sh

@@ -5,6 +5,5 @@ repo="$repos/fonts"
 uri="https://github.com/Himmalerin/kiss-fonts.git"
 
 git clone --recursive "$uri" "$1/$repo"
-
-mkdir -p "$1/etc/profile.d"
-printf "export KISS_PATH=%s/kiss-fonts:\$KISS_PATH\n" "$repo" > "$1/etc/profile.d/kiss_repo-fonts.sh"
+profiles="$1"/etc/profile.d && mkdir -p "$profiles"
+echo "export KISS_PATH=$repo/kiss-fonts:\$KISS_PATH" > "$profiles"/kiss_repo-fonts.sh

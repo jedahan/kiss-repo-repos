@@ -3,8 +3,7 @@
 repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
 repo="$repos/eudaldgr"
 uri="https://github.com/eudaldgr/kiss-repo"
-
 git clone --recursive "$uri" "$1/$repo"
 
-mkdir -p "$1/etc/profile.d"
-printf "export KISS_PATH=\$KISS_PATH:%s/libs\n" "$repo" > "$1/etc/profile.d/kiss_repo-eudaldgr.sh"
+profiles="$1"/etc/profile.d && mkdir -p "$profiles"
+echo "export KISS_PATH=\$KISS_PATH:$repo/libs" > "$profiles"/kiss_repo-eudaldgr.sh

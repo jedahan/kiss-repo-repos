@@ -3,8 +3,7 @@
 repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
 repo="$repos/games"
 uri="https://github.com/sdsddsd1/kiss-games"
-
 git clone --recursive "$uri" "$1/$repo"
 
-mkdir -p "$1/etc/profile.d"
-printf "export KISS_PATH=%s/%s:\$KISS_PATH\n" "$repo" "games" > "$1/etc/profile.d/kiss_repo-games.sh"
+profiles="$1"/etc/profile.d && mkdir -p "$profiles"
+echo "export KISS_PATH=$repo/games:\$KISS_PATH" > "$profiles"/kiss_repo-games.sh

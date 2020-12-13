@@ -1,10 +1,12 @@
 #!/bin/sh -e
 
-repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
-repo="$repos/java"
 uri="https://github.com/trbednarzyk/KISS-Java-Repo"
+name="java"
+
+repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
+repo="$repos/$name"
 
 git clone --recursive "$uri" "$1/$repo"
 
-mkdir -p "$1/etc/profile.d"
-printf "export KISS_PATH=%s:\$KISS_PATH\n" "$repo" > "$1/etc/profile.d/kiss_repo-java.sh"
+profiles="$1"/etc/profile.d && mkdir -p "$profiles"
+echo "export KISS_PATH=$repo:\$KISS_PATH" > "$profiles"/kiss_repo-$name.sh
