@@ -3,5 +3,5 @@
 repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
 repo="$repos/mmatongo"
 uri="https://github.com/mmatongo/kiss"
-mkdir -p "$1/$repos"
+
 git clone --recursive "$uri" "$1/$repo"

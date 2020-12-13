@@ -3,7 +3,7 @@
 repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
 repo="$repos/himmalerin"
 uri="https://github.com/Himmalerin/kiss-himmalerin.git"
-mkdir -p "$1/$repos"
+
 git clone --recursive "$uri" "$1/$repo"
 
 mkdir -p "$1/etc/profile.d"
