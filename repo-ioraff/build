@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-uri="https://git.ebc.li/kiss/custom"
+uri="https://github.com/ioraff/kiss-personal.git"
 name="ioraff"; path="extra"
 
 repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
