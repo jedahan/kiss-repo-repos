@@ -1,3 +1,1 @@
-#!/bin/sh
-
-printf 'To start using the containers repo, `%s`\n' 'source /etc/profile.d/kiss_repo-containers.sh'
+../post-install

@@ -1,3 +1,1 @@
-#!/bin/sh
-
-printf 'To start using the lang repo, `%s`\n' 'source /etc/profile'
+../post-install

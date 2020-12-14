@@ -1,9 +1,10 @@
 #!/bin/sh -e
 
-repo=mmatongo
-subdir=android
-
 repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
-profiles="$1"/etc/profile.d
 
-printf "export KISS_PATH=%s/%s/%s:\$KISS_PATH\n" "$repos" $repo $subdir > "$profiles/kiss_repo-$repo-$subdir.sh"
+name=mmatongo
+path=android
+repo="$repos/$name"
+
+profiles="$1"/etc/profile.d && mkdir -p "$profiles"
+echo "export KISS_PATH=$repo/$path:\$KISS_PATH" > "$profiles"/kiss_repo-$name-$path.sh

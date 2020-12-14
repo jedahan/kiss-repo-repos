@@ -1,3 +1,1 @@
-#!/bin/sh
-
-printf 'To start using ioraff repo, `%s`\n' 'exec sh -l'
+../post-install
