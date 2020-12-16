@@ -9,4 +9,4 @@ repo="$repos/$name"
 git clone --recursive "$uri" "$1/$repo"
 
 profiles="$1"/etc/profile.d && mkdir -p "$profiles"
-echo "export KISS_PATH=$repo:\$KISS_PATH" > "$profiles"/kiss_repo-$name.sh
+echo "export KISS_PATH=$repo/kiss-wayand:\$KISS_PATH" > "$profiles"/kiss_repo-$name.sh
