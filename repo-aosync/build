@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
+repo="$repos/containers"
+uri="https://github.com/aosync/kiss-aosync"
+git clone --recursive "$uri" "$1/$repo"
+
+profiles="$1"/etc/profile.d
+mkdir -p "$profiles"
+echo "export KISS_PATH=$repo:\$KISS_PATH" > "$profiles"/kiss_repo-aosync.sh
