@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+uri="https://github.com/dylanaraps/kiss-flatpak.git"
+name="flatpak"; path="flatpak"
+
+repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
+repo="$repos/$name"
+
+git clone --recursive "$uri" "$1/$repo"
+
+profiles="$1"/etc/profile.d && mkdir -p "$profiles"
+echo "export KISS_PATH=$repo/$path:\$KISS_PATH" > "$profiles"/kiss_repo-$name-$path.sh

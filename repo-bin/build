@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+uri="https://github.com/kiss-community/repo-bin"
+name="bin"
+
+repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
+repo="$repos/$name"
+
+git clone --recursive "$uri" "$1/$repo"
+
+profiles="$1"/etc/profile.d && mkdir -p "$profiles"
+echo "export KISS_PATH=$repo:\$KISS_PATH" > "$profiles"/kiss_repo-$name.sh

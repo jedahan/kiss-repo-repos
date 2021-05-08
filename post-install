@@ -1,1 +1,2 @@
+#!/bin/sh -e
 source /etc/profile

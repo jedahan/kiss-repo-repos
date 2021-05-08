@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+name="periish"; path="dbus"
+
+repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
+repo="$repos/$name"
+
+profiles="$1"/etc/profile.d && mkdir -p "$profiles"
+echo "export KISS_PATH=$repo/$path:\$KISS_PATH" > "$profiles"/kiss_repo-$name-$path.sh
