@@ -2,7 +2,7 @@
 
 repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
 repo="$repos/community"
-uri="https://github.com/kisslinux/community.git"
+uri="https://github.com/kiss-community/repo.git"
 profiles="$1"/etc/profile.d
 
 git clone --recursive "$uri" "$1/$repo"
