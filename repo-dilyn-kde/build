@@ -1,9 +1,0 @@
-#!/bin/sh -e
-
-repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
-repo="$repos/dilyn-kde"
-uri="https://github.com/dilyn-corner/KISS-kde"
-git clone --recursive "$uri" "$1/$repo"
-
-profiles="$1"/etc/profile.d && mkdir -p "$profiles"
-echo "export KISS_PATH=$repo/kde:\$KISS_PATH" > "$profiles"/kiss_repo-dilyn-kde.sh

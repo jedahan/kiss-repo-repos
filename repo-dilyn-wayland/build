@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
+repo="$repos/dilyn"
+
+profiles="$1"/etc/profile.d
+mkdir -p "$profiles"
+echo "export KISS_PATH=$repo/wayland:\$KISS_PATH" > "$profiles"/kiss_repo-dilyn-wayland.sh

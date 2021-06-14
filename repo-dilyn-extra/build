@@ -1,8 +1,8 @@
 #!/bin/sh -e
 
 repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
-repo="$repos/dilyn-kde"
+repo="$repos/dilyn"
 
 profiles="$1"/etc/profile.d
 mkdir -p "$profiles"
-echo "export KISS_PATH=$repo/extra:\$KISS_PATH" > "$profiles"/kiss_repo-dilyn-kde-extra.sh
+echo "export KISS_PATH=$repo/extra:\$KISS_PATH" > "$profiles"/kiss_repo-dilyn-extra.sh

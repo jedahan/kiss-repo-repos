@@ -1,0 +1,6 @@
+#!/bin/sh -e
+
+repos="${KISS_REPOSITORY_PATH:-/var/db/kiss/repos}"
+repo="$repos/dilyn"
+uri="https://github.com/dilyn-corner/KISS-me"
+git clone --recursive "$uri" "$1/$repo"
