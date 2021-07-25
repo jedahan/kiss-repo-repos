@@ -1,10 +1,22 @@
-#!/bin/sh -e
+#!/bin/bash
+
+_update=${XDG_RUNTIME_DIR:-${TMPDIR:-"/tmp"}}/kiss-hooks-update-git
+clean() {
+  rm -f $_updates
+}
+trap 'clean "$1"' EXIT INT
 
 case $1 in
-update)
-    git remote >/dev/null 2>&1 && {
-      git pull
-      git submodule update --remote --init --force
-    } || true
+pre-update)
+    git remote >/dev/null 2>&1 || exit
+
+    toplevel="$(rev-parse --show-toplevel)"
+    grep --quiet $toplevel $_update && exit
+    git -C $toplevel pull
+    git -C $toplevel submodule update --remote --init --force
+    echo $toplevel >> $_update
+    ;;
+post-updates)
+    clean
     ;;
 esac
