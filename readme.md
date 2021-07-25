@@ -1,26 +1,41 @@
 # repositories
 
-packages that install [kiss](k1ss.org) repositories for you
+Manage [kiss](kisslinux.org) repositories
 
-installs to $KISS_REPOSITORY_PATH, which defaults to **/var/db/kiss/repos**
+Installs to `$KISS_REPOSITORY_PATH`, which defaults to **/var/db/kiss/repos**
 
-repo-admicos: admicos's personal repository
+Also installs and configures necessary hook for updating repositories
 
-repo-cemkeylan: cemkeylan's personal repository
+---
 
-repo-community: the community repository
-
-repo-eudaldgr: libs from eudaldgr's repo
-
-repo-eudaldgr-lang: lang from eudaldgr's repo
-
-repo-eudaldgr-testing: testing packages from eudaldgr's repo
-
-repo-fonts: a repository for font packages
-
-repo-jedahan: jedahan's personal repository
-
-repo-muevoid: mostly games and gamedev stuff
-
-repo-wayland: a repository for wayland pacakges
-
+kiss-hooks-update-git: update git repository  
+repo-admicos: custom packages by admicos - kiss utilities, fonts, hexchat, etc  
+repo-android: android packages by mmatongo - for adb  
+repo-aosync: kiss aosync: ungoogled-chromium-bin and others  
+repo-bin: binary packages  
+repo-cemkeylan: cemkeylan's personal KISS repository  
+repo-community: a repository for font packages  
+repo-containers: kiss containers: podman + podman-compose  
+repo-dilyn-extra: extra packages by dilyn - for wayland-only firefox  
+repo-dilyn-wayland: wayland packages by dilyn  
+repo-dilyn: dilyn's private packages - dependency for dilyn-{extra, wayland}  
+repo-dumpsterfire: kiss dumpsterfire: mostly an up-to-date eiwd  
+repo-eudaldgr-extra: extra packages by eudaldgr - for gobject-introspection  
+repo-eudaldgr-python: python packages by eudaldgr - for gobject-python  
+repo-eudaldgr: custom packages by eudaldgr - right now, just libs  
+repo-flatpak: flatpak repo  
+repo-fonts: the community repository  
+repo-games-equipment: equipment for games - like freeimage  
+repo-games: games!  
+repo-himmalerin: custom packages by himmalerin - mtr, ntpd-service, gptfdisk, adwaita, wf-recorder, more  
+repo-ioraff: personal packages by ioraff - gpgme and others  
+repo-java: java packages by trbednarzyk  
+repo-jedahan: custom packages by jedahan  
+repo-lang: kiss language repo  
+repo-mmatongo: mmatongo dependency repo  
+repo-muevoid: custom packages by muevoid - mainly has gamedev related things, tic80, etc   
+repo-periish-audio: audio packages by periish - pulseaudio and others  
+repo-periish-dbus: dbus packages by periish - dunst and such  
+repo-periish: custom packages by periish  
+repo-repos: this repo of repos, added to your path  
+repo-talyn: kiss baselayout and linux kernel for jedahan's laptop  

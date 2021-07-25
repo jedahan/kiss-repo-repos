@@ -1,1 +1,2 @@
-../post-install
+#!/bin/sh -e
+source /etc/profile
