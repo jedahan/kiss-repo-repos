@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+case $1 in
+update)
+    git remote >/dev/null 2>&1 && {
+      git pull
+      git submodule update --remote --init --force
+    } || true
+    ;;
+esac

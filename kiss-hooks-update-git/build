@@ -1,0 +1,4 @@
+#!/bin/sh -e
+
+install -Dm755 -t "$1/var/db/kiss/hooks" update-git
+install -Dm755 -t "$1/etc/profile.d" kiss-hooks_update-git.sh
